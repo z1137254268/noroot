@@ -16,7 +16,7 @@ vless 性能更加优秀，占用资源更少。
 
 ### 服务端
 
-支持replit、glitch、okteto，请勿滥用
+支持replit、glitch等无root环境；okteto、heroku等有root容器，请勿滥用
 
 ### 客户端
 * **务必替换所有的`xxx.railway.app`为railway分配的项目域名**  
