@@ -8,7 +8,6 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 ADD etc/Caddyfile /Caddyfile
-ADD etc/StoreFiles /StoreFiles
 ADD etc/config.json /config.json
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
