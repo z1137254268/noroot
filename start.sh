@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # set val
 PORT=${PORT:-8080}
 AUUID=${AUUID:-5194845a-cacf-4515-8ea5-fa13a91b1026}
