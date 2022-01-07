@@ -1,5 +1,0 @@
-services:
-  vrush:
-    build: .
-    ports:
-      - 443:443
