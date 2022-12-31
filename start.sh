@@ -6,7 +6,6 @@ ParameterSSENCYPT=${ParameterSSENCYPT:-chacha20-ietf-poly1305}
 CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/AYJCSGM/mikutap/zip/refs/heads/master}
 
 # download execution
-apt-get install wget -y
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
 wget "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -O xray-linux-64.zip
 unzip -o xray-linux-64.zip && rm -rf xray-linux-64.zip
