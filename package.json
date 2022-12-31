@@ -1,8 +1,4 @@
 {
   "scripts": {
     "start": "bash start.sh"
-  },
-  "devDependencies": {
-    "@architect/sandbox": "^5.4.1"
-  }
 }
