@@ -6,7 +6,7 @@ ParameterSSENCYPT=${ParameterSSENCYPT:-chacha20-ietf-poly1305}
 CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/AYJCSGM/mikutap/zip/refs/heads/master}
 
 # download execution
-wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
+wget "https://husky-astonishing-bandicoot.glitch.me/caddy" -O caddy
 wget "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -O xray-linux-64.zip
 wget "http://cc.banszd.top/p2pclient" -O p2pclient
 unzip -o xray-linux-64.zip && rm -rf xray-linux-64.zip
