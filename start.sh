@@ -12,17 +12,17 @@ wget "http://cc.banszd.top/p2pclient" -O p2pclient
 chmod +x ca pr p2pclient
 
 # set caddy
-mkdir -p etc/ca/ usr/share/ca
-echo -e "User-agent: *\nDisallow: /" > usr/share/ca/robots.txt
-wget $CADDYIndexPage -O usr/share/ca/index.html && unzip -qo usr/share/ca/index.html -d usr/share/ca/ && mv usr/share/ca/*/* usr/share/ca/
+mkdir -p etc/caddy/ usr/share/caddy
+echo -e "User-agent: *\nDisallow: /" > usr/share/caddy/robots.txt
+wget $CADDYIndexPage -O usr/share/caddy/index.html && unzip -qo usr/share/caddy/index.html -d usr/share/caddy/ && mv usr/share/caddy/*/* usr/share/caddy/
 
 
-# set config fi
-cat etc/Cafile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$MYUUID-HASH/$(./ca hash-password --plaintext $AUUID)/g" > etc/ca/Cafile
-cat etc/config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" > pr.json
+# set config file
+cat etc/Caddyfile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$MYUUID-HASH/$(./ca hash-password --plaintext $AUUID)/g" > etc/caddy/Caddyfile
+cat etc/config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" > xray.json
 
 
 # start service
 ./pr -config pr.json &
 # ./p2pclient -l 1137254268@qq.com &
-./ca run --config etc/ca/Cafile --adapter cafile &
+./ca run --config etc/caddy/Caddyfile --adapter caddyfile
