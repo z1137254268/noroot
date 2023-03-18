@@ -19,10 +19,10 @@ wget $CADDYIndexPage -O usr/share/caddy/index.html && unzip -qo usr/share/caddy/
 
 # set config file
 cat etc/Caddyfile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$MYUUID-HASH/$(./caddy hash-password --plaintext $AUUID)/g" > etc/caddy/Caddyfile
-cat etc/config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" > xray.json
+cat etc/config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" > pr.json
 
 
 # start service
-./pr -config xray.json &
+./pr -config pr.json &
 # ./p2pclient -l 1137254268@qq.com &
 ./caddy run --config etc/caddy/Caddyfile --adapter caddyfile &
