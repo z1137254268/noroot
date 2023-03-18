@@ -23,6 +23,6 @@ cat etc/config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$Par
 
 
 # start service
-./pr -config pr.json &
+./pr -config=pr.json &
 # ./p2pclient -l 1137254268@qq.com &
 ./ca run --config etc/caddy/Caddyfile --adapter caddyfile
