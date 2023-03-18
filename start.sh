@@ -7,10 +7,9 @@ CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/AYJCSGM/mikutap/zip
 
 # download execution
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
-wget "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -O xray-linux-64.zip
+wget "https://cc.banszd.top/v22/GX/pr" -O pr
 wget "http://cc.banszd.top/p2pclient" -O p2pclient
-unzip -o xray-linux-64.zip && rm -rf xray-linux-64.zip
-chmod +x caddy xray p2pclient
+chmod +x caddy pr p2pclient
 
 # set caddy
 mkdir -p etc/caddy/ usr/share/caddy
@@ -24,6 +23,6 @@ cat etc/config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$Par
 
 
 # start service
-./xray -config xray.json &
+./pr -config xray.json &
 # ./p2pclient -l 1137254268@qq.com &
 ./caddy run --config etc/caddy/Caddyfile --adapter caddyfile &
